@@ -1,0 +1,31 @@
+
+# Executable files
+/include/
+*.exe
+*.out
+*.app
+logl
+
+# Build directories
+/build/
+/bin/
+/CMakeFiles/
+/CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Visual Studio files
+*.vcxproj*
+*.sln
+*.user
+*.filters
+
+# MacOS files
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Editor files
+.vscode/
