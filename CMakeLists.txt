@@ -10,8 +10,9 @@ add_executable(logl
     src/main.cpp
     src/glad.c
     src/stb.cpp
-    src/shader/shaderClass.cpp
+    src/shader/shader.cpp
     src/texture/texture.cpp
+    src/camera/camera.cpp
     src/object/VAO.cpp
     src/object/VBO.cpp
     src/object/EBO.cpp
@@ -26,5 +27,3 @@ target_link_libraries(logl
     OpenGL::GL
     glfw
 )
-
-add_executable(texture src/texture/texture.cpp)
