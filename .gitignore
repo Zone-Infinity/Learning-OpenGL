@@ -13,6 +13,7 @@ logl
 /CMakeCache.txt
 Makefile
 cmake_install.cmake
+.cmake/
 
 # Visual Studio files
 *.vcxproj*
@@ -29,3 +30,7 @@ cmake_install.cmake
 
 # Editor files
 .vscode/
+.idea/
+/.ninja_deps
+/.ninja_log
+/build.ninja
