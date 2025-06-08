@@ -28,7 +28,7 @@ public:
     float speed = 0.03f;
     float sensitivity = 100.0f;
 
-    Camera(int width, int height, vec3 position);
+    Camera(int width, int height, vec3 position, vec3 orientation);
 
     void updateMatrix(float fovDeg, float nearPlane, float farPlane);
 

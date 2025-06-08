@@ -1,9 +1,10 @@
 #include "camera.h"
 
-Camera::Camera(int width, int height, vec3 position) {
+Camera::Camera(int width, int height, vec3 position, vec3 orientation) {
     Camera::width = width;
     Camera::height = height;
     Camera::position = position;
+    Camera::orientation = orientation;
 }
 
 void Camera::updateMatrix(float fovDeg, float nearPlane, float farPlane) {
@@ -23,6 +24,10 @@ void Camera::matrix(Shader &shader, const char *uniform) {
 
 void Camera::handleInput(GLFWwindow *window) {
     // Handles key inputs
+    if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS) {
+        std::cout << "POS: " << position.x << " " << position.y << " " << position.z << std::endl;
+        std::cout << "ORIENTATION: " << orientation.x << " " << orientation.y << " " << orientation.z << std::endl;
+    }
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
         position += speed * orientation;
     }
@@ -38,13 +43,8 @@ void Camera::handleInput(GLFWwindow *window) {
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
         position += speed * up;
     }
-    if (glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-        position += speed * -up;
-    }
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-        speed = 0.1f;
-    } else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE) {
-        speed = 0.03f;
+        position += speed * -up;
     }
 
     // Handles mouse inputs
